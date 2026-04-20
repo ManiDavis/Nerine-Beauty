@@ -30,8 +30,8 @@ const featuredTreatments = [
     tagline: "Non-surgical lift",
     duration: "From 60 min",
     price: "From £80",
-    img: "/images/treatment-alift.jpg",
-    alt: "A-Lift facial treatment",
+    img: "/images/treatment-hands.jpg",
+    alt: "Expert facial treatment at Nerine Beauty",
   },
 ];
 
@@ -179,10 +179,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
           {/* Image */}
           <div className="relative min-h-[400px] lg:min-h-[600px]">
-            <div className="absolute inset-0 img-placeholder-light">
-              {/* Replace with: <Image src="/images/salon-interior.jpg" alt="Nerine Beauty salon interior" fill className="object-cover" /> */}
-              <span>salon interior photo</span>
-            </div>
+            <Image
+              src="/images/salon-interior.jpg"
+              alt="Nerine Beauty treatment room with Guinot Hydradermie machine"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-cream-300/10" />
           </div>
 
           {/* Text */}
@@ -250,9 +255,14 @@ export default function HomePage() {
               <FadeInItem key={t.id}>
                 <div className="group rounded-2xl overflow-hidden bg-navy-700 border border-navy-600/60 hover:border-gold-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-navy-950/50">
                   {/* Card image */}
-                  <div className="relative h-64 img-placeholder overflow-hidden">
-                    {/* Replace with <Image src={t.img} alt={t.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-700" /> */}
-                    <span>{t.alt}</span>
+                  <div className="relative h-64 overflow-hidden bg-navy-700">
+                    <Image
+                      src={t.img}
+                      alt={t.alt}
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
                   </div>
                   {/* Card body */}

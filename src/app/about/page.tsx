@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/FadeIn";
 import { FlowerBackground } from "@/components/FlowerBackground";
@@ -107,12 +108,16 @@ export default function AboutPage() {
             </FadeIn>
           </div>
 
-          {/* Image */}
+          {/* Treatment hands image — shows expertise without requiring a portrait */}
           <div className="relative min-h-[400px] lg:min-h-[600px] order-1 lg:order-2">
-            <div className="absolute inset-0 img-placeholder-light">
-              {/* Replace with: <Image src="/images/therapist.jpg" alt="Anne-Marie Lemaitre, Nerine Beauty" fill className="object-cover object-top" /> */}
-              <span>therapist portrait photo</span>
-            </div>
+            <Image
+              src="/images/treatment-hands.jpg"
+              alt="Expert facial treatment at Nerine Beauty"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-cream-300/20 to-transparent" />
           </div>
         </div>
       </section>
