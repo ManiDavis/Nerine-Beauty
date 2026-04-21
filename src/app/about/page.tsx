@@ -96,7 +96,7 @@ export default async function AboutPage() {
 
           <div className="relative min-h-[400px] lg:min-h-[600px] order-1 lg:order-2">
             <Image
-              src="/images/treatment-hands.jpg"
+              src="/images/treatment-alift.jpg"
               alt="Expert facial treatment at Nerine Beauty"
               fill
               className="object-cover object-center"
@@ -112,7 +112,7 @@ export default async function AboutPage() {
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
           <div className="relative min-h-[300px] lg:min-h-[400px]">
             <Image
-              src="/images/products-flatlay.jpg"
+              src="/images/salon-interior.jpg"
               alt="Premium skincare products used at Nerine Beauty"
               fill
               className="object-cover object-center"

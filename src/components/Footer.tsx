@@ -1,118 +1,72 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const brands = [
-  "Guinot",
-  "Bio Sculpture",
-  "Nouveau Lashes",
-  "LVL",
-  "Sensory Retreats",
+const brandLogos = [
+  { src: "/images/guinot.png", alt: "Guinot Institut Paris", width: 90, height: 45 },
+  { src: "/images/bio-sculpture.png", alt: "Bio Sculpture", width: 110, height: 45 },
+  { src: "/images/nouveau-lashes.png", alt: "Nouveau Lashes & LVL", width: 130, height: 45 },
+  { src: "/images/sensory-retreats.png", alt: "Sensory Retreats", width: 100, height: 45 },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-navy-950 text-cream-300">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div>
-            <div className="mb-4">
-              <span className="font-serif text-3xl text-gold-400 block leading-none">
-                nerine
-              </span>
-              <span className="font-script text-2xl text-gold-300 ml-4">
-                beauty
-              </span>
-            </div>
-            <p className="font-sans text-sm text-cream-400 leading-relaxed max-w-xs">
-              Expert beauty treatments in the heart of Guernsey. Where luxury
-              meets expertise.
-            </p>
+      <div className="mx-auto max-w-7xl px-8 lg:px-12 pt-14 pb-10">
+        {/* Logo + Brand logos row */}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* Nerine Beauty logo */}
+          <div className="flex-shrink-0">
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="Nerine Beauty"
+                width={160}
+                height={90}
+                className="h-20 w-auto object-contain"
+              />
+            </Link>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="font-sans text-xs tracking-widest uppercase text-gold-500 mb-5">
-              Navigate
-            </h3>
-            <ul className="space-y-2">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/treatments", label: "Treatments" },
-                { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
-              ].map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="font-sans text-sm text-cream-300 hover:text-gold-400 transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Divider — vertical on desktop */}
+          <div className="hidden lg:block w-px h-16 bg-navy-700" />
 
-          {/* Contact */}
-          <div>
-            <h3 className="font-sans text-xs tracking-widest uppercase text-gold-500 mb-5">
-              Find Us
-            </h3>
-            <address className="not-italic font-sans text-sm text-cream-300 leading-relaxed space-y-1">
-              <p>La Sabri, Vale Avenue</p>
-              <p>Vale, Guernsey GY3 5TF</p>
-              <a
-                href="tel:01481244114"
-                className="block mt-3 hover:text-gold-400 transition-colors"
-              >
-                01481 244114
-              </a>
-              <a
-                href="mailto:annemlemaitre@cwgsy.net"
-                className="block hover:text-gold-400 transition-colors"
-              >
-                annemlemaitre@cwgsy.net
-              </a>
-            </address>
-          </div>
-        </div>
-
-        {/* Brands */}
-        <div className="mt-14 pt-10 border-t border-navy-800">
-          <p className="font-sans text-xs tracking-widest uppercase text-gold-600 mb-6 text-center">
-            Our Premium Partners
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            {brands.map((b) => (
-              <span
-                key={b}
-                className="font-sans text-sm font-medium tracking-wider text-cream-400 uppercase"
-              >
-                {b}
-              </span>
+          {/* Brand logos */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-10">
+            {brandLogos.map((logo) => (
+              <Image
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="h-9 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
             ))}
           </div>
         </div>
 
+        {/* Divider */}
+        <div className="mt-10 border-t border-navy-800" />
+
         {/* Legal */}
-        <div className="mt-10 pt-6 border-t border-navy-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-xs text-cream-500">
-            © {new Date().getFullYear()} Nerine Beauty. All rights reserved.
-          </p>
+        <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="font-sans text-xs text-cream-500 hover:text-gold-400 transition-colors tracking-wider uppercase"
+              className="font-sans text-xs tracking-widest uppercase text-cream-400 hover:text-gold-400 transition-colors"
             >
-              Privacy & Cookie Policy
+              Privacy &amp; Cookie Policy
             </Link>
             <Link
               href="/terms"
-              className="font-sans text-xs text-cream-500 hover:text-gold-400 transition-colors tracking-wider uppercase"
+              className="font-sans text-xs tracking-widest uppercase text-cream-400 hover:text-gold-400 transition-colors"
             >
               Terms of Use
             </Link>
           </div>
+          <p className="font-sans text-xs text-cream-500 sm:ml-auto">
+            © {new Date().getFullYear()} Nerine Beauty. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

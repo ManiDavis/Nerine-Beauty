@@ -55,13 +55,13 @@ export function ContactContent({
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-navy-950/60">
               <iframe
                 title="Nerine Beauty location"
-                src="https://maps.google.com/maps?q=La+Sabri%2C+Vale+Avenue%2C+Vale%2C+Guernsey+GY3+5TF&output=embed&z=15"
+                src="https://maps.google.com/maps?q=La+Sabri%2C+Vale+Avenue%2C+Vale%2C+Guernsey+GY3+5TF&output=embed&z=13"
                 width="100%"
                 height="420"
                 style={{
                   border: 0,
                   display: 'block',
-                  filter: 'sepia(65%) hue-rotate(5deg) saturate(145%) brightness(87%)',
+                  filter: 'sepia(80%) hue-rotate(340deg) saturate(120%) brightness(60%)',
                 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

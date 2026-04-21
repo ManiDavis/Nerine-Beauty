@@ -13,7 +13,7 @@ const staticFeatured = [
     tagline: 'Turn back the clock',
     duration: 'From 45 min',
     price: 'From £55',
-    img: '/images/treatment-mask.jpg',
+    img: '/images/treatment-facial.jpg',
     alt: 'Visible Age Reverse Facial at Nerine Beauty',
   },
   {
@@ -31,7 +31,7 @@ const staticFeatured = [
     tagline: 'Non-surgical lift',
     duration: 'From 60 min',
     price: 'From £80',
-    img: '/images/treatment-hands.jpg',
+    img: '/images/treatment-alift.jpg',
     alt: 'Expert facial treatment at Nerine Beauty',
   },
 ]
