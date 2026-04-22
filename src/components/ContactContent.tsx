@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FadeIn } from '@/components/FadeIn'
 import { FlowerBackground } from '@/components/FlowerBackground'
+import { CustomMap } from '@/components/CustomMap'
+
+const hasMapsKey = !!process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY
 
 interface OpeningHour {
   days: string
@@ -53,19 +56,19 @@ export function ContactContent({
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-12">
           <FadeIn className="lg:col-span-3" direction="left">
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-navy-950/60">
-              <iframe
-                title="Nerine Beauty location"
-                src="https://maps.google.com/maps?q=La+Sabri%2C+Vale+Avenue%2C+Vale%2C+Guernsey+GY3+5TF&output=embed&z=14"
-                width="100%"
-                height="420"
-                style={{
-                  border: 0,
-                  display: 'block',
-                  filter: 'brightness(55%) contrast(120%) saturate(60%) sepia(20%)',
-                }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              {hasMapsKey ? (
+                <CustomMap />
+              ) : (
+                <iframe
+                  title="Nerine Beauty location"
+                  src="https://maps.google.com/maps?q=La+Sabri%2C+Vale+Avenue%2C+Vale%2C+Guernsey+GY3+5TF&output=embed&z=14"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0, display: 'block' }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              )}
             </div>
           </FadeIn>
 
