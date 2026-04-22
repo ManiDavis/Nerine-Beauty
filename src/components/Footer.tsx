@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const brandLogos = [
-  { src: "/images/guinot.png", alt: "Guinot Institut Paris", width: 90, height: 45 },
-  { src: "/images/bio-sculpture.png", alt: "Bio Sculpture", width: 110, height: 45 },
-  { src: "/images/nouveau-lashes.png", alt: "Nouveau Lashes & LVL", width: 130, height: 45 },
-  { src: "/images/sensory-retreats.png", alt: "Sensory Retreats", width: 100, height: 45 },
+  { src: "/images/guinot.png", alt: "Guinot Institut Paris", width: 110, height: 55 },
+  { src: "/images/bio-sculpture.png", alt: "Bio Sculpture", width: 140, height: 55 },
+  { src: "/images/nouveau-lashes.png", alt: "Nouveau Lashes & LVL", width: 160, height: 55 },
+  { src: "/images/sensory-retreats.png", alt: "Sensory Retreats", width: 130, height: 55 },
 ];
 
 export function Footer() {
@@ -39,7 +39,7 @@ export function Footer() {
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
-                className="h-9 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                className="h-11 w-auto object-contain"
               />
             ))}
           </div>
