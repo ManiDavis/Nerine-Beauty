@@ -57,8 +57,8 @@ export default async function AboutPage() {
   const settings = await getSettings()
 
   const aboutTitle = settings?.aboutTitle ?? 'A passion for beauty, refined over decades'
-  const aboutBody = settings?.aboutBody ?? "Anne-Marie Lemaitre has dedicated her career to helping clients look and feel their very best. Based at La Sabri in the Vale, she brings warmth, professionalism and an exceptional eye for detail to every single appointment."
-  const aboutBody2 = settings?.aboutBody2 ?? "Over more than 20 years, Anne-Marie has built lasting relationships with hundreds of Guernsey clients. Her approach is deeply personal: she takes the time to understand your unique skin, lifestyle and goals, then selects the treatments and products that will truly make a difference."
+  const aboutBody = settings?.aboutBody ?? "Michelle has dedicated her career to helping clients look and feel their very best. Based at La Sabri in the Vale, she brings warmth, professionalism and an exceptional eye for detail to every single appointment."
+  const aboutBody2 = settings?.aboutBody2 ?? "Over more than 20 years, Michelle has built lasting relationships with hundreds of Guernsey clients. Her approach is deeply personal: she takes the time to understand your unique skin, lifestyle and goals, then selects the treatments and products that will truly make a difference."
 
   return (
     <main>
