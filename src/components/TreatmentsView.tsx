@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { categories } from '@/data/treatments'
 import { FadeIn } from '@/components/FadeIn'
@@ -20,6 +21,7 @@ export interface TreatmentData {
   tagline: string
   description: string
   options: TreatmentOption[]
+  img?: string
 }
 
 function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
@@ -29,10 +31,21 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
     <div className="border-b border-cream-400/50 last:border-b-0">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-start justify-between gap-4 py-8 text-left group"
+        className="w-full flex items-center justify-between gap-4 sm:gap-6 py-6 text-left group"
         aria-expanded={open}
       >
-        <div className="flex-1">
+        {treatment.img && (
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-xl overflow-hidden">
+            <Image
+              src={treatment.img}
+              alt={treatment.name}
+              fill
+              className="object-cover object-center"
+              sizes="80px"
+            />
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
           <p className="font-sans text-xs tracking-[0.25em] uppercase text-gold-600 mb-2">
             {treatment.tagline}
           </p>
@@ -71,6 +84,18 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
             className="overflow-hidden"
           >
             <div className="pb-10">
+              {treatment.img && (
+                <div className="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden mb-6">
+                  <Image
+                    src={treatment.img}
+                    alt={treatment.name}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, 800px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cream-300/30 to-transparent" />
+                </div>
+              )}
               <p className="font-sans text-navy-700/80 leading-relaxed mb-8 max-w-2xl">
                 {treatment.description}
               </p>

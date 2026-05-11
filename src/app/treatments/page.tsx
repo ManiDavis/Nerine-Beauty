@@ -19,7 +19,9 @@ async function getTreatments() {
 
 export default async function TreatmentsPage() {
   const sanityTreatments = await getTreatments()
-  const treatments = sanityTreatments ?? staticTreatments
+  const treatments = sanityTreatments
+    ? sanityTreatments.map((t: Record<string, unknown>) => ({ ...t, img: t.imageUrl ?? undefined }))
+    : staticTreatments
 
   return (
     <main>

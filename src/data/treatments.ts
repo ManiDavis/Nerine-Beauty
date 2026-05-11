@@ -11,6 +11,7 @@ export interface Treatment {
   tagline: string;
   description: string;
   options: TreatmentOption[];
+  img?: string;
 }
 
 export const treatments: Treatment[] = [
@@ -19,6 +20,7 @@ export const treatments: Treatment[] = [
     name: "Visible Age Reverse Facial",
     category: "facials",
     tagline: "Turn back the clock",
+    img: "/images/treatment-facial.jpg",
     description:
       "Our signature age-reversing treatment targets fine lines, loss of firmness and uneven skin tone using advanced techniques and premium products — for visibly younger-looking skin after a single session.",
     options: [
@@ -32,6 +34,7 @@ export const treatments: Treatment[] = [
     name: "Guinot Hydradermie Facials",
     category: "facials",
     tagline: "Your best skin yet",
+    img: "/images/treatment-hydradermie.jpg",
     description:
       "Smooth, clear, radiant and youthful. Revolutionary salon treatments and after-care products formulated with the best in skincare innovation to enhance and maintain results at home.",
     options: [
@@ -45,6 +48,7 @@ export const treatments: Treatment[] = [
     name: "Guinot Manual Face Treatments",
     category: "facials",
     tagline: "The art of touch",
+    img: "/images/salon-interior.jpg",
     description:
       "Expertly performed by hand, these treatments combine Guinot's precise massage techniques with targeted skincare to leave skin balanced, refreshed and deeply nourished.",
     options: [
@@ -58,6 +62,7 @@ export const treatments: Treatment[] = [
     name: "A-Lift Treatments",
     category: "facials",
     tagline: "Non-surgical lift",
+    img: "/images/treatment-alift.jpg",
     description:
       "The non-surgical alternative to a facelift. A-Lift uses patented three-phase current technology to lift, firm and tone facial muscles, stimulate cell renewal and boost collagen production.",
     options: [
@@ -71,6 +76,7 @@ export const treatments: Treatment[] = [
     name: "Massages",
     category: "body",
     tagline: "Escape the everyday",
+    img: "/images/pexels-biomedica-tatiane-antunes-477350868-15876689.jpg",
     description:
       "From tension-melting deep tissue work to blissful aromatherapy rituals, every massage is tailored specifically to your needs, leaving you completely restored.",
     options: [
@@ -85,6 +91,7 @@ export const treatments: Treatment[] = [
     name: "Waxing & Electrolysis",
     category: "hair-removal",
     tagline: "Smooth for longer",
+    img: "/images/salon-interior.jpg",
     description:
       "Smooth, long-lasting results using the finest wax formulations for minimal discomfort. Electrolysis offers a permanent solution for unwanted hair.",
     options: [
@@ -100,6 +107,7 @@ export const treatments: Treatment[] = [
     name: "Enhance Your Eyes",
     category: "eyes",
     tagline: "Define your look",
+    img: "/images/salon-interior.jpg",
     description:
       "From expertly shaped brows to stunning lash lifts using Nouveau Lashes and LVL technology — our eye treatments frame your face beautifully for weeks.",
     options: [
@@ -114,6 +122,7 @@ export const treatments: Treatment[] = [
     name: "Bio Sculpture Nails",
     category: "nails",
     tagline: "Gel or varnish",
+    img: "/images/wmremove-transformed (1).jpg",
     description:
       "Bio Sculpture gel strengthens, protects and beautifies your natural nails. Available in an extensive colour range with long-lasting, chip-free results.",
     options: [
