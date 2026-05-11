@@ -164,7 +164,7 @@ export default async function HomePage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="font-sans text-navy-700/80 leading-relaxed mb-6">
-                {settings?.aboutBody ?? 'Anne-Marie has been transforming the skin and wellbeing of Guernsey clients for over two decades. Combining exceptional technique with the finest global beauty brands, every visit to Nerine Beauty is a moment of genuine luxury.'}
+                {settings?.aboutBody ?? 'Michelle has been transforming the skin and wellbeing of Guernsey clients for over two decades. Combining exceptional technique with the finest global beauty brands, every visit to Nerine Beauty is a moment of genuine luxury.'}
               </p>
             </FadeIn>
             <FadeInStagger className="grid grid-cols-3 gap-6 mb-8" stagger={0.1} delayStart={0.4}>

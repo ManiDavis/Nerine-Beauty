@@ -9,6 +9,7 @@ import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
 export const metadata: Metadata = { title: 'About' }
 
 const qualifications = [
+  'BABTAC Insurance Accreditation',
   'Guinot Certified Therapist',
   'A-Lift Advanced Practitioner',
   'Nouveau Lashes Certified',
@@ -56,8 +57,8 @@ export default async function AboutPage() {
   const settings = await getSettings()
 
   const aboutTitle = settings?.aboutTitle ?? 'A passion for beauty, refined over decades'
-  const aboutBody = settings?.aboutBody ?? "Anne-Marie Lemaitre has dedicated her career to helping clients look and feel their very best. Based at La Sabri in the Vale, she brings warmth, professionalism and an exceptional eye for detail to every single appointment."
-  const aboutBody2 = settings?.aboutBody2 ?? "Over more than 20 years, Anne-Marie has built lasting relationships with hundreds of Guernsey clients. Her approach is deeply personal: she takes the time to understand your unique skin, lifestyle and goals, then selects the treatments and products that will truly make a difference."
+  const aboutBody = settings?.aboutBody ?? "Michelle has dedicated her career to helping clients look and feel their very best. Based at La Sabri in the Vale, she brings warmth, professionalism and an exceptional eye for detail to every single appointment."
+  const aboutBody2 = settings?.aboutBody2 ?? "Over more than 20 years, Michelle has built lasting relationships with hundreds of Guernsey clients. Her approach is deeply personal: she takes the time to understand your unique skin, lifestyle and goals, then selects the treatments and products that will truly make a difference."
 
   return (
     <main>
@@ -107,6 +108,30 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* ── QUALIFICATIONS ───────────────────────────────────── */}
+      <section className="bg-navy-900 py-24 px-6">
+        <div className="mx-auto max-w-5xl">
+          <FadeIn className="text-center mb-14">
+            <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold-500 block mb-3">Credentials</span>
+            <h2 className="font-serif text-4xl text-cream-200">Qualified & Certified</h2>
+          </FadeIn>
+          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.08}>
+            {qualifications.map((q) => (
+              <FadeInItem key={q}>
+                <div className="flex items-center gap-3 rounded-xl border border-navy-600/60 bg-navy-800/50 px-5 py-4">
+                  <div className="w-5 h-5 flex-shrink-0 rounded-full bg-gold-500/20 flex items-center justify-center">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#C4A05A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="1.5,5 4,7.5 8.5,2.5" />
+                    </svg>
+                  </div>
+                  <span className="font-sans text-sm text-cream-300">{q}</span>
+                </div>
+              </FadeInItem>
+            ))}
+          </FadeInStagger>
+        </div>
+      </section>
+
       {/* ── PRODUCTS SECTION ─────────────────────────────────── */}
       <section className="relative bg-navy-900 overflow-hidden">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
@@ -135,30 +160,6 @@ export default async function AboutPage() {
               </p>
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* ── QUALIFICATIONS ───────────────────────────────────── */}
-      <section className="bg-navy-900 py-24 px-6">
-        <div className="mx-auto max-w-5xl">
-          <FadeIn className="text-center mb-14">
-            <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold-500 block mb-3">Credentials</span>
-            <h2 className="font-serif text-4xl text-cream-200">Qualified & Certified</h2>
-          </FadeIn>
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.08}>
-            {qualifications.map((q) => (
-              <FadeInItem key={q}>
-                <div className="flex items-center gap-3 rounded-xl border border-navy-600/60 bg-navy-800/50 px-5 py-4">
-                  <div className="w-5 h-5 flex-shrink-0 rounded-full bg-gold-500/20 flex items-center justify-center">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#C4A05A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="1.5,5 4,7.5 8.5,2.5" />
-                    </svg>
-                  </div>
-                  <span className="font-sans text-sm text-cream-300">{q}</span>
-                </div>
-              </FadeInItem>
-            ))}
-          </FadeInStagger>
         </div>
       </section>
 
