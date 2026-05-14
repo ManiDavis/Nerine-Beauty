@@ -39,15 +39,18 @@ const staticFeatured = [
 const staticTestimonials = [
   {
     _id: '1',
-    quote: "I've been coming to Nerine Beauty for five years and wouldn't go anywhere else. The skill, the products, the atmosphere — everything is simply exceptional.",
-    name: 'Sarah M.',
-    detail: 'Loyal client, 5+ years',
+    name: 'Jane Brown',
+    date: '18 September 2019',
+    quote: "Michelle is kind, helpful gentle and really knows what's what in beauty care of all sorts. I moved with her from her previous job as I wouldn't want anyone else doing what she does so well!",
+    avatar: '/images/jane-brown.jpg',
   },
   {
     _id: '2',
-    quote: 'My Guinot Hydradermie facial transformed my skin. I saw a difference after the very first session. Absolutely incredible.',
-    name: 'Claire B.',
-    detail: 'Guinot client',
+    name: 'Joanne Francis',
+    date: '30 July 2019',
+    quote: "I would highly recommend nerine beauty , lovely relaxing setting and a friendly atmosphere, had eyebrows and lip wax done, very good prices so impressed with what I had done I have booked in again to have my nails done.",
+    highlight: 'Beautiful results',
+    avatar: '/images/joanne-francis.jpg',
   },
 ]
 
@@ -270,24 +273,57 @@ export default async function HomePage() {
         <div className="mx-auto max-w-5xl relative z-10">
           <FadeIn className="text-center mb-12">
             <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold-600 block mb-2">Kind Words</span>
-            <h2 className="font-serif text-4xl text-navy-800">Our Clients</h2>
+            <h2 className="font-serif text-4xl text-navy-800">What Our Clients Say</h2>
           </FadeIn>
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8" stagger={0.15}>
-            {testimonialList.map((t: { _id: string; quote: string; name: string; detail?: string }) => (
+            {(testimonialList as { _id: string; name: string; date?: string; quote: string; highlight?: string; avatar?: string; detail?: string }[]).map((t) => (
               <FadeInItem key={t._id}>
-                <div className="bg-cream-100 rounded-2xl p-8 border border-cream-400/50">
-                  <svg className="w-8 h-8 text-gold-500 mb-4 opacity-60" viewBox="0 0 32 32" fill="currentColor">
-                    <path d="M10 8 C6 10 4 13 4 17 C4 21 7 24 10 24 C13 24 16 21 16 18 C16 15 14 13 11 13 C11 11 12 9 14 8 Z M24 8 C20 10 18 13 18 17 C18 21 21 24 24 24 C27 24 30 21 30 18 C30 15 28 13 25 13 C25 11 26 9 28 8 Z" />
-                  </svg>
-                  <p className="font-sans text-navy-800/80 leading-relaxed mb-5 italic">"{t.quote}"</p>
-                  <div>
-                    <p className="font-serif text-navy-800 font-medium">{t.name}</p>
-                    {t.detail && <p className="font-sans text-xs text-navy-700/60 tracking-wide">{t.detail}</p>}
+                <div className="bg-cream-100 rounded-2xl p-7 border border-cream-400/50 flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-navy-200 flex-shrink-0 border border-cream-400">
+                      {t.avatar ? (
+                        <Image src={t.avatar} alt={t.name} fill className="object-cover" sizes="48px" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-navy-700">
+                          <span className="font-serif text-sm text-cream-200 font-medium">
+                            {t.name.split(' ').map((n: string) => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-serif text-navy-800 font-medium leading-tight">{t.name}</span>
+                        <svg className="w-4 h-4 text-red-500 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
+                          <path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.12L8 10.4l-3.71 2.14L5 8.42 2 5.5l4.15-.75z" />
+                        </svg>
+                        <span className="font-sans text-xs text-navy-700/70 leading-tight">
+                          recommends <span className="font-semibold text-navy-800">Nerine Beauty</span>
+                        </span>
+                      </div>
+                      {t.date && <p className="font-sans text-xs text-navy-700/50 mt-0.5">{t.date}</p>}
+                    </div>
                   </div>
+                  <p className="font-sans text-sm text-navy-800/80 leading-relaxed">{t.quote}</p>
+                  {t.highlight && <p className="font-sans text-sm font-bold text-navy-800">{t.highlight}</p>}
+                  {t.detail && !t.date && <p className="font-sans text-xs text-navy-700/60 tracking-wide">{t.detail}</p>}
                 </div>
               </FadeInItem>
             ))}
           </FadeInStagger>
+          <FadeIn className="text-center mt-10">
+            <a
+              href="https://www.facebook.com/nerinebeautyguernsey/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-full bg-[#1877F2] px-8 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:bg-[#166FE5] hover:shadow-lg hover:shadow-blue-500/20 active:scale-95"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+              </svg>
+              Leave a Review on Facebook
+            </a>
+          </FadeIn>
         </div>
       </section>
 

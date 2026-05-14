@@ -9,7 +9,7 @@ import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
 export const metadata: Metadata = { title: 'About' }
 
 const qualifications = [
-  'BABTAC Insurance Accreditation',
+  'BABTAC Accredited & Insured',
   'Guinot Certified Therapist',
   'A-Lift Advanced Practitioner',
   'Nouveau Lashes Certified',
@@ -129,6 +129,11 @@ export default async function AboutPage() {
               </FadeInItem>
             ))}
           </FadeInStagger>
+          <FadeIn delay={0.3} className="mt-8 text-center">
+            <p className="font-sans text-xs text-cream-400/60 max-w-xl mx-auto leading-relaxed">
+              BABTAC (British Association of Beauty Therapy & Cosmetology) is the professional organisation to which Michelle is accredited and insured, ensuring every treatment meets the highest industry standards.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
