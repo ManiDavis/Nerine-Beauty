@@ -16,6 +16,7 @@ const qualifications = [
   'Bio Sculpture Certified Technician',
   'CIDESCO International Diploma',
   'ITEC Beauty Therapy',
+  'BABTAC Accredited & Insured',
 ]
 
 const brandDetails = [
@@ -159,6 +160,11 @@ export default async function AboutPage() {
               </FadeInItem>
             ))}
           </FadeInStagger>
+          <FadeIn delay={0.3} className="mt-8 text-center">
+            <p className="font-sans text-xs text-cream-400/60 max-w-xl mx-auto leading-relaxed">
+              BABTAC (British Association of Beauty Therapy & Cosmetology) is the professional organisation to which Anne-Marie is accredited and insured, ensuring every treatment meets the highest industry standards.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
