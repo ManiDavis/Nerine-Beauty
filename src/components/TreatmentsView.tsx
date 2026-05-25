@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { categories } from '@/data/treatments'
 import { FadeIn } from '@/components/FadeIn'
 import { FlowerBackground } from '@/components/FlowerBackground'
+import { FacialsTabView } from '@/components/FacialsTabView'
 
 interface TreatmentOption {
   name: string
@@ -122,10 +123,20 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
 export function TreatmentsView({ treatments }: { treatments: TreatmentData[] }) {
   const [activeCategory, setActiveCategory] = useState('all')
 
-  const filtered =
+  const facialTreatments = treatments.filter((t) => t.category === 'facials')
+
+  const nonFacialFiltered =
     activeCategory === 'all'
-      ? treatments
+      ? treatments.filter((t) => t.category !== 'facials')
+      : activeCategory === 'facials'
+      ? []
       : treatments.filter((t) => t.category === activeCategory)
+
+  const showFacialTabs =
+    activeCategory === 'all' || activeCategory === 'facials'
+
+  const showOtherAccordion =
+    activeCategory !== 'facials' && nonFacialFiltered.length > 0
 
   return (
     <>
@@ -155,22 +166,44 @@ export function TreatmentsView({ treatments }: { treatments: TreatmentData[] }) 
         </div>
       </div>
 
-      {/* Treatment list */}
-      <div className="relative bg-cream-300 min-h-screen overflow-hidden">
+      {/* Facial treatments — tab view */}
+      <AnimatePresence>
+        {showFacialTabs && facialTreatments.length > 0 && (
+          <motion.div
+            key="facials-tabs"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <FacialsTabView facials={facialTreatments} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Other treatments — accordion */}
+      <div className="relative bg-cream-300 min-h-[20vh] overflow-hidden">
         <FlowerBackground color="#C4A05A" opacity={0.07} />
         <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-10 py-12">
           <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {filtered.map((t) => (
-                <TreatmentCard key={t._id ?? t.id ?? t.name} treatment={t} />
-              ))}
-            </motion.div>
+            {showOtherAccordion && (
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {activeCategory === 'all' && (
+                  <p className="font-sans text-xs tracking-[0.25em] uppercase text-gold-600 mb-8">
+                    Other Treatments
+                  </p>
+                )}
+                {nonFacialFiltered.map((t) => (
+                  <TreatmentCard key={t._id ?? t.id ?? t.name} treatment={t} />
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </div>
