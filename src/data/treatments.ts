@@ -32,7 +32,7 @@ export const treatments: Treatment[] = [
     name: "Guinot Electrical Facials",
     category: "facials",
     tagline: "Technology meets skincare",
-    img: "/images/treatment-hydradermie.jpg",
+    img: "/images/hydraclean.png",
     description:
       "Smooth, clear, radiant and youthful. Revolutionary electrical salon treatments using Guinot's advanced technology, formulated with the best in skincare innovation to deliver outstanding results.",
     options: [
@@ -47,7 +47,7 @@ export const treatments: Treatment[] = [
     name: "Guinot Manual Facials",
     category: "facials",
     tagline: "The art of touch",
-    img: "/images/treatment-facial.jpg",
+    img: "/images/age-summum.jpg",
     description:
       "Expertly performed by hand, these Guinot treatments combine precise massage techniques with targeted skincare to firm, lift and nourish — leaving skin visibly younger and deeply radiant.",
     options: [
@@ -62,7 +62,7 @@ export const treatments: Treatment[] = [
     name: "A Lift",
     category: "facials",
     tagline: "Non-surgical lift",
-    img: "/images/treatment-alift.jpg",
+    img: "/images/A - Lift Facial.jpg",
     description:
       "The non-surgical alternative to a facelift. A-Lift uses patented three-phase current technology to lift, firm and tone facial muscles, stimulate cell renewal and boost collagen production.",
     options: [

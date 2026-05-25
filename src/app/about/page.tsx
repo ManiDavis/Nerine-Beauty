@@ -129,9 +129,16 @@ export default async function AboutPage() {
               </FadeInItem>
             ))}
           </FadeInStagger>
-          <FadeIn delay={0.3} className="mt-8 text-center">
-            <p className="font-sans text-xs text-cream-400/60 max-w-xl mx-auto leading-relaxed">
-              BABTAC (British Association of Beauty Therapy & Cosmetology) is the professional organisation to which Michelle is accredited and insured, ensuring every treatment meets the highest industry standards.
+          <FadeIn delay={0.3} className="mt-10 flex flex-col items-center gap-5">
+            <Image
+              src="/images/2026-2027 BABTAC Member Logo.png"
+              alt="BABTAC Qualified Verified Insured Member 2026–2027"
+              width={160}
+              height={160}
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+            />
+            <p className="font-sans text-xs text-cream-400/60 max-w-xl mx-auto leading-relaxed text-center">
+              BABTAC (British Association of Beauty Therapy &amp; Cosmetology) is the professional organisation to which Michelle is accredited and insured, ensuring every treatment meets the highest industry standards.
             </p>
           </FadeIn>
         </div>

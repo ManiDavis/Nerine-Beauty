@@ -43,6 +43,16 @@ export function Footer() {
               />
             ))}
           </div>
+
+          {/* BABTAC trust badge */}
+          <div className="hidden lg:block w-px h-16 bg-navy-700" />
+          <Image
+            src="/images/2026-2027 BABTAC Member Logo.png"
+            alt="BABTAC Qualified Verified Insured Member 2026–2027"
+            width={80}
+            height={80}
+            className="h-16 w-auto object-contain flex-shrink-0"
+          />
         </div>
 
         {/* Divider */}
