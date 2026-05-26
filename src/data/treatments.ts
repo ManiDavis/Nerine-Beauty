@@ -20,7 +20,7 @@ export const treatments: Treatment[] = [
     name: "Visible Age Reverse Facial",
     category: "facials",
     tagline: "Turn back the clock",
-    img: "/images/treatment-facial.jpg",
+    img: "/images/age-summum.jpg",
     description:
       "Our signature age-reversing treatment targets fine lines, loss of firmness and uneven skin tone using advanced techniques and premium products — for visibly younger-looking skin after a single session.",
     options: [
@@ -47,7 +47,7 @@ export const treatments: Treatment[] = [
     name: "Guinot Manual Facials",
     category: "facials",
     tagline: "The art of touch",
-    img: "/images/age-summum.jpg",
+    img: "/images/detoxygene.jpg",
     description:
       "Expertly performed by hand, these Guinot treatments combine precise massage techniques with targeted skincare to firm, lift and nourish — leaving skin visibly younger and deeply radiant.",
     options: [
