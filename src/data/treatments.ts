@@ -76,7 +76,7 @@ export const treatments: Treatment[] = [
     name: "Massages",
     category: "body",
     tagline: "Escape the everyday",
-    img: "/images/pexels-biomedica-tatiane-antunes-477350868-15876689.jpg",
+    img: "/images/Massage.jpeg",
     description:
       "From tension-melting deep tissue work to blissful aromatherapy rituals, every massage is tailored specifically to your needs, leaving you completely restored.",
     options: [
@@ -91,7 +91,7 @@ export const treatments: Treatment[] = [
     name: "Waxing & Electrolysis",
     category: "hair-removal",
     tagline: "Smooth for longer",
-    img: "/images/salon-interior.jpg",
+    img: "/images/Electrolysis.jpeg",
     description:
       "Smooth, long-lasting results using the finest wax formulations for minimal discomfort. Electrolysis offers a permanent solution for unwanted hair.",
     options: [
@@ -107,7 +107,7 @@ export const treatments: Treatment[] = [
     name: "Enhance Your Eyes",
     category: "eyes",
     tagline: "Define your look",
-    img: "/images/salon-interior.jpg",
+    img: "/images/Eyelash-Lift.jpg",
     description:
       "From expertly shaped brows to stunning lash lifts using Nouveau Lashes and LVL technology — our eye treatments frame your face beautifully for weeks.",
     options: [
@@ -122,7 +122,7 @@ export const treatments: Treatment[] = [
     name: "Bio Sculpture Nails",
     category: "nails",
     tagline: "Gel or varnish",
-    img: "/images/wmremove-transformed (1).jpg",
+    img: "/images/Bio Sculpt Gel Nails.jpeg",
     description:
       "Bio Sculpture gel strengthens, protects and beautifies your natural nails. Available in an extensive colour range with long-lasting, chip-free results.",
     options: [
