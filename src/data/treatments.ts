@@ -69,11 +69,13 @@ export const treatments: Treatment[] = [
     img: "/images/A - Lift Facial.jpg",
     imgPosition: 'center 20%',
     description:
-      "The non-surgical alternative to a facelift. A-Lift uses patented three-phase current technology to lift, firm and tone facial muscles, stimulate cell renewal and boost collagen production.",
+      "The non-surgical alternative to a facelift. A-Lift lifts, firms and tones the face and neck, reduces fine lines and restores elasticity — completely pain free, with no downtime.",
     options: [
-      { name: "A Lift", duration: "60 min", price: "£63" },
-      { name: "A Lift with Mask", duration: "75 min", price: "£73" },
-      { name: "A Lift with Massage and Mask", duration: "90 min", price: "£90" },
+      { name: "A-Lift", duration: "45 min", price: "£55" },
+      { name: "A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£250" },
+      { name: "A-Lift — Course of 10", duration: "9x A-Lift + 1x Luxury A-Lift", price: "£570" },
+      { name: "Luxury A-Lift", duration: "80 min", price: "£85" },
+      { name: "Luxury A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£380" },
     ],
   },
   {
