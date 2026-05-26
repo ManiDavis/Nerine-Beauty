@@ -12,6 +12,7 @@ export interface Treatment {
   description: string;
   options: TreatmentOption[];
   img?: string;
+  imgPosition?: 'center' | 'top' | 'bottom';
 }
 
 export const treatments: Treatment[] = [
@@ -21,6 +22,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "Turn back the clock",
     img: "/images/age-summum.jpg",
+    imgPosition: 'top',
     description:
       "Our signature age-reversing treatment targets fine lines, loss of firmness and uneven skin tone using advanced techniques and premium products — for visibly younger-looking skin after a single session.",
     options: [
@@ -33,6 +35,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "Technology meets skincare",
     img: "/images/hydraclean.png",
+    imgPosition: 'top',
     description:
       "Smooth, clear, radiant and youthful. Revolutionary electrical salon treatments using Guinot's advanced technology, formulated with the best in skincare innovation to deliver outstanding results.",
     options: [
@@ -48,6 +51,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "The art of touch",
     img: "/images/detoxygene.jpg",
+    imgPosition: 'top',
     description:
       "Expertly performed by hand, these Guinot treatments combine precise massage techniques with targeted skincare to firm, lift and nourish — leaving skin visibly younger and deeply radiant.",
     options: [
@@ -63,6 +67,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "Non-surgical lift",
     img: "/images/A - Lift Facial.jpg",
+    imgPosition: 'top',
     description:
       "The non-surgical alternative to a facelift. A-Lift uses patented three-phase current technology to lift, firm and tone facial muscles, stimulate cell renewal and boost collagen production.",
     options: [
