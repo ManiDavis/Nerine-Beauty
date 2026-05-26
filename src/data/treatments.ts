@@ -2,6 +2,7 @@ export interface TreatmentOption {
   name: string;
   duration: string;
   price: string;
+  description?: string;
 }
 
 export interface Treatment {
@@ -73,7 +74,12 @@ export const treatments: Treatment[] = [
     options: [
       { name: "A-Lift", duration: "45 min", price: "£55" },
       { name: "A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£250" },
-      { name: "A-Lift — Course of 10", duration: "9x A-Lift + 1x Luxury A-Lift", price: "£570" },
+      {
+        name: "A-Lift — Course of 10",
+        duration: "9x A-Lift + 1x Luxury A-Lift",
+        price: "£570",
+        description: "Nine standard A-Lift sessions plus one complimentary Luxury A-Lift — our best-value course for lasting, cumulative results.",
+      },
       { name: "Luxury A-Lift", duration: "80 min", price: "£85" },
       { name: "Luxury A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£380" },
     ],
@@ -85,21 +91,44 @@ export const treatments: Treatment[] = [
     tagline: "Escape the everyday",
     img: "/images/Massage.jpeg",
     description:
-      "Deeply restorative treatments using 100% natural, vegan-friendly Sensory Retreats oils — Coconut, Argan and Shea. From a 30-minute Aroma Massage to the full Divine Escape Signature experience, plus body care packages and Lava Shells.",
+      "Deeply restorative treatments using 100% natural, vegan-friendly Sensory Retreats oils — Coconut, Argan and Shea. From an Aroma Massage to the full Divine Escape Signature experience, plus Lava Shells and add-on upgrades.",
     options: [
-      { name: "Divine Escape Signature Massage", duration: "85 min", price: "£85" },
-      { name: "Escape Massage", duration: "60 min", price: "£70" },
-      { name: "Therma Bliss Add-on", duration: "Add to any massage", price: "£10" },
-      { name: "Aroma Massage", duration: "60 min", price: "£55" },
-      { name: "Aroma Massage", duration: "45 min", price: "£45" },
-      { name: "Aroma Massage", duration: "30 min", price: "£35" },
-      { name: "Lava Shells Massage", duration: "75 min", price: "£80" },
-      { name: "Lava Shells Massage", duration: "45 min", price: "£55" },
-      { name: "Ear Candling", duration: "45 min", price: "£40" },
-      { name: "Body Brush, Exfoliation & Moisturise", duration: "30 min", price: "£35" },
-      { name: "Back, Face & Scalp Treatment", duration: "75 min", price: "£75" },
-      { name: "Total Body Care", duration: "90 min", price: "£75" },
-      { name: "Total Body Care Deluxe", duration: "120 min", price: "£100" },
+      {
+        name: "Divine Escape Signature Massage",
+        duration: "85 min",
+        price: "£85",
+        description: "Our most indulgent experience — a full-body massage blending aromatherapy, deep relaxation techniques and heated Lava Shells for complete restoration.",
+      },
+      {
+        name: "Escape Massage",
+        duration: "60 min",
+        price: "£70",
+        description: "A deeply restorative full-body massage using Sensory Retreats oils, fully tailored to your tension and mood.",
+      },
+      {
+        name: "Aroma Massage",
+        duration: "60 min",
+        price: "£55",
+        description: "A lighter, soothing full-body massage using 100% natural Coconut, Argan and Shea oils. Perfect for regular relaxation.",
+      },
+      {
+        name: "Lava Shells Massage",
+        duration: "75 min",
+        price: "£80",
+        description: "Heated volcanic shells glide across the body delivering deeply warming pressure — ideal for muscle tension and stress relief.",
+      },
+      {
+        name: "Total Body Care Deluxe",
+        duration: "120 min",
+        price: "£100",
+        description: "The ultimate body package: body brush, full exfoliation, moisturise treatment, and a relaxing massage — all in one session.",
+      },
+      {
+        name: "Therma Bliss Add-on",
+        duration: "Add to any massage",
+        price: "£10",
+        description: "Warm thermal mitts or booties applied during your massage for extra warmth and comfort on hands or feet.",
+      },
     ],
   },
   {
@@ -126,12 +155,34 @@ export const treatments: Treatment[] = [
     tagline: "Define your look",
     img: "/images/Eyelash-Lift.jpg",
     description:
-      "From expertly shaped brows to stunning lash lifts using Nouveau Lashes and LVL technology — our eye treatments frame your face beautifully for weeks.",
+      "From expertly shaped brows to stunning lash lifts — our eye treatments use Nouveau Lashes and LVL technology to frame your face beautifully for weeks.",
     options: [
-      { name: "LVL Lash Lift", duration: "60 min", price: "£55" },
-      { name: "Nouveau Classic Lashes", duration: "90 min", price: "£75" },
-      { name: "Lash Tint", duration: "20 min", price: "£18" },
-      { name: "Brow Tint & Shape", duration: "30 min", price: "£22" },
+      {
+        name: "LVL Lash Lift & Tint",
+        duration: "60 min",
+        price: "£55",
+        description: "Lifts and curls your natural lashes from the root, then tints for added definition. No extensions, no maintenance — results last up to 8 weeks.",
+      },
+      {
+        name: "Eyelash Extensions — Full Set",
+        duration: "90 min",
+        price: "£85",
+        description: "Individual synthetic lashes applied to each natural lash for a full, customisable look that lasts 4–6 weeks.",
+      },
+      {
+        name: "Eyelash Extensions — Infills",
+        duration: "From 45 min",
+        price: "From £38",
+        description: "Top up your existing set as your natural lashes grow out. Recommended every 2–3 weeks to keep your look full.",
+      },
+      { name: "Eyelash Tint, Brow Tint & Shape", duration: "30 min", price: "£34" },
+      { name: "Brow Tint & Shape", duration: "15 min", price: "£19" },
+      {
+        name: "Eye Logic Eye Contour Treatment",
+        duration: "45 min",
+        price: "£48",
+        description: "A specialist Guinot treatment targeting dehydration, puffiness and fine lines around the delicate eye contour area.",
+      },
     ],
   },
   {
@@ -143,11 +194,10 @@ export const treatments: Treatment[] = [
     description:
       "Bio Sculpture gel strengthens, protects and beautifies your natural nails. Available in an extensive colour range with long-lasting, chip-free results.",
     options: [
-      { name: "Gel Overlay — Hands", duration: "60 min", price: "£45" },
-      { name: "Gel Overlay — Feet", duration: "60 min", price: "£45" },
-      { name: "Bio Varnish — Hands", duration: "45 min", price: "£35" },
-      { name: "Bio Varnish — Feet", duration: "45 min", price: "£35" },
-      { name: "Gel Infill", duration: "45 min", price: "£35" },
+      { name: "Gel Overlay — Hands", duration: "60 min", price: "£43" },
+      { name: "Gel Overlay — Feet", duration: "60 min", price: "£43" },
+      { name: "Bio Varnish — Hands", duration: "45 min", price: "£36" },
+      { name: "Bio Varnish — Feet", duration: "45 min", price: "£40" },
     ],
   },
 ];
