@@ -35,7 +35,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "Technology meets skincare",
     img: "/images/hydraclean.png",
-    imgPosition: 'center 15%',
+    imgPosition: 'center 25%',
     description:
       "Smooth, clear, radiant and youthful. Revolutionary electrical salon treatments using Guinot's advanced technology, formulated with the best in skincare innovation to deliver outstanding results.",
     options: [
@@ -51,7 +51,7 @@ export const treatments: Treatment[] = [
     category: "facials",
     tagline: "The art of touch",
     img: "/images/detoxygene.jpg",
-    imgPosition: 'center 15%',
+    imgPosition: 'center 25%',
     description:
       "Expertly performed by hand, these Guinot treatments combine precise massage techniques with targeted skincare to firm, lift and nourish — leaving skin visibly younger and deeply radiant.",
     options: [
