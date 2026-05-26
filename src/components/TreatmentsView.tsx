@@ -22,7 +22,7 @@ export interface TreatmentData {
   description: string
   options: TreatmentOption[]
   img?: string
-  imgPosition?: 'center' | 'top' | 'bottom'
+  imgPosition?: string
 }
 
 function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
@@ -41,7 +41,8 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
               src={treatment.img}
               alt={treatment.name}
               fill
-              className={`object-cover ${treatment.imgPosition === 'top' ? 'object-top' : treatment.imgPosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
+              className="object-cover"
+              style={treatment.imgPosition ? { objectPosition: treatment.imgPosition } : undefined}
               sizes="80px"
             />
           </div>
@@ -91,7 +92,8 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
                     src={treatment.img}
                     alt={treatment.name}
                     fill
-                    className={`object-cover ${treatment.imgPosition === 'top' ? 'object-top' : treatment.imgPosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
+                    className="object-cover"
+                    style={treatment.imgPosition ? { objectPosition: treatment.imgPosition } : undefined}
                     sizes="(max-width: 640px) 100vw, 800px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cream-300/30 to-transparent" />
