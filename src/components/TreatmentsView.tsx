@@ -174,7 +174,9 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
               </div>
               <div className="mt-6">
                 <Link
-                  href="/contact"
+                  href="https://www.vagaro.com/nerinebeauty"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-navy-800 px-6 py-2.5 font-sans text-xs font-medium tracking-wider text-cream-200 transition-all hover:bg-navy-700 hover:shadow-md active:scale-95"
                 >
                   Book This Treatment

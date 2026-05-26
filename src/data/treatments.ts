@@ -194,12 +194,10 @@ export const treatments: Treatment[] = [
     description:
       "Bio Sculpture gel strengthens, protects and beautifies your natural nails. Available in an extensive colour range with long-lasting, chip-free results.",
     options: [
-      { name: "Deluxe Manicure", duration: "60 min", price: "£45" },
-      { name: "Deluxe Pedicure", duration: "75 min", price: "£55" },
-      { name: "Gel Manicure", duration: "60 min", price: "£43" },
-      { name: "Gel Pedicure", duration: "60 min", price: "£43" },
-      { name: "Manicure", duration: "45 min", price: "£36" },
-      { name: "Pedicure", duration: "45 min", price: "£40" },
+      { name: "Gel Overlay — Hands", duration: "60 min", price: "£43" },
+      { name: "Gel Overlay — Feet", duration: "60 min", price: "£43" },
+      { name: "Bio Varnish — Hands", duration: "45 min", price: "£36" },
+      { name: "Bio Varnish — Feet", duration: "45 min", price: "£40" },
     ],
   },
 ];
