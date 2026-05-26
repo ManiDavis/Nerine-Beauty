@@ -11,6 +11,7 @@ interface TreatmentOption {
   name: string
   duration: string
   price: string
+  description?: string
 }
 
 export interface TreatmentData {
@@ -23,6 +24,70 @@ export interface TreatmentData {
   options: TreatmentOption[]
   img?: string
   imgPosition?: string
+}
+
+function OptionCard({ opt }: { opt: TreatmentOption }) {
+  const [open, setOpen] = useState(false)
+  const hasDesc = Boolean(opt.description)
+
+  const content = (
+    <>
+      <div className="flex items-start justify-between gap-3">
+        <p className="font-serif text-navy-800 font-medium leading-snug">{opt.name}</p>
+        {hasDesc && (
+          <motion.svg
+            animate={{ rotate: open ? 180 : 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="flex-shrink-0 mt-1 text-navy-500/50"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          >
+            <polyline points="2,4 6,8 10,4" />
+          </motion.svg>
+        )}
+      </div>
+      <div className="flex items-center justify-between mt-2">
+        <span className="font-sans text-xs text-navy-600/70">{opt.duration}</span>
+        <span className="font-serif text-lg text-gold-600 font-semibold">{opt.price}</span>
+      </div>
+      <AnimatePresence initial={false}>
+        {open && opt.description && (
+          <motion.p
+            key="desc"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden font-sans text-xs text-navy-600/70 leading-relaxed mt-3 pt-3 border-t border-cream-400/60"
+          >
+            {opt.description}
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </>
+  )
+
+  if (hasDesc) {
+    return (
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="rounded-xl bg-cream-200 border border-cream-400/60 px-5 py-4 text-left w-full transition-colors hover:border-gold-400/60"
+      >
+        {content}
+      </button>
+    )
+  }
+
+  return (
+    <div className="rounded-xl bg-cream-200 border border-cream-400/60 px-5 py-4">
+      {content}
+    </div>
+  )
 }
 
 function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
@@ -104,20 +169,7 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {treatment.options.map((opt) => (
-                  <div
-                    key={opt.name}
-                    className="rounded-xl bg-cream-200 border border-cream-400/60 px-5 py-4"
-                  >
-                    <p className="font-serif text-navy-800 font-medium mb-2 leading-snug">
-                      {opt.name}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="font-sans text-xs text-navy-600/70">{opt.duration}</span>
-                      <span className="font-serif text-lg text-gold-600 font-semibold">
-                        {opt.price}
-                      </span>
-                    </div>
-                  </div>
+                  <OptionCard key={opt.name} opt={opt} />
                 ))}
               </div>
               <div className="mt-6">
