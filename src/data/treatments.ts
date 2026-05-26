@@ -100,11 +100,12 @@ export const treatments: Treatment[] = [
     description:
       "Smooth, long-lasting results using the finest wax formulations for minimal discomfort. Electrolysis offers a permanent solution for unwanted hair.",
     options: [
-      { name: "Full Leg Wax", duration: "45 min", price: "£40" },
-      { name: "Half Leg Wax", duration: "30 min", price: "£25" },
-      { name: "Bikini Wax", duration: "20 min", price: "£20" },
-      { name: "Electrolysis (15 min)", duration: "15 min", price: "£22" },
-      { name: "Electrolysis (30 min)", duration: "30 min", price: "£38" },
+      { name: "Full Leg Wax", duration: "45 min", price: "£38" },
+      { name: "Half Leg Wax", duration: "30 min", price: "From £25" },
+      { name: "Bikini Wax", duration: "20 min", price: "£14" },
+      { name: "Electrolysis (15 min)", duration: "15 min", price: "£17" },
+      { name: "Electrolysis (30 min)", duration: "30 min", price: "£28" },
+      { name: "Electrolysis (45 min)", duration: "45 min", price: "£40" },
     ],
   },
   {
