@@ -10,6 +10,8 @@ export interface Treatment {
   category: string;
   tagline: string;
   description: string;
+  extendedSections?: { heading: string; content: string }[];
+  benefits?: string[];
   options: TreatmentOption[];
   bookingNote?: string;
   img?: string;
@@ -70,7 +72,24 @@ export const treatments: Treatment[] = [
     img: "/images/A - Lift Facial.jpg",
     imgPosition: 'center 20%',
     description:
-      "Designed to fit into any lifestyle, age group, and suit the busiest of schedules. Whether trying it out, booking a course, or creating a bespoke programme — A-Lift delivers luxury, relaxation, AND results. Intensive lifting, toning and firming of the face and neck, improved skin hydration, smoother more radiant complexion, and reduced fine lines — non-invasive and completely pain free with no downtime. Have just the A-Lift on its own, or indulge in a massage and mask. Book a consultation to discuss the treatment.",
+      "Designed to fit into any lifestyle, age group, and suit the busiest of schedules. Whether trying it out, booking a course, or creating a bespoke programme — A-Lift delivers luxury, relaxation, AND results!",
+    extendedSections: [
+      {
+        heading: "Lasting Effects",
+        content:
+          "Results are immediate after just one A-Lift treatment however, for longer lasting results a course would be advised to maintain the beneficial effects of the treatment. The number of recommended treatments varies from 5 to 10 and from person to person. A maintenance treatment is recommended approximately every 4 to 6 weeks to maintain your fresh and natural results.",
+      },
+    ],
+    benefits: [
+      "Intensive lifting, toning, and firming of the face and neck",
+      "Improved skin hydration",
+      "Regain elasticity and structure",
+      "Smoother, more radiant complexion",
+      "Target and reduce appearance of fine lines and wrinkles",
+      "Reduce puffiness around the eye area due to lymph (fluid) accumulation",
+      "Non-invasive and completely pain free",
+      "No downtime",
+    ],
     options: [
       { name: "A-Lift", duration: "45 min", price: "£55" },
       { name: "A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£250" },
@@ -78,6 +97,7 @@ export const treatments: Treatment[] = [
       { name: "Luxury A-Lift", duration: "80 min", price: "£85" },
       { name: "Luxury A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£380" },
     ],
+    bookingNote: "Have just the A-Lift on its own, or indulge in a massage and mask — book a consultation to discuss the treatment.",
   },
   {
     id: "massages",
@@ -86,7 +106,7 @@ export const treatments: Treatment[] = [
     tagline: "Escape the everyday",
     img: "/images/Massage.jpeg",
     description:
-      "Massage is an ancient therapy that still works wonders today, and can transport you into relaxation to help soothe mind and muscles. Using a combination of Swedish massage movements, Balinese, and over 30 years of experience — a gentle flowing massage designed to melt away tension, improve circulation and leave you feeling relaxed from head to toe. Perfect for stress relief and overall wellness. Try the sensory journey with the Escape massage, or Lava Shells deep warmth to soothe the muscles, or just a back massage to help release everyday tension.",
+      "Massage is an ancient therapy that still works wonders today, and can transport you into relaxation to help soothe mind and muscles. Using a combination of Swedish massage movements, Balinese, and over 30 years of experience — a gentle flowing massage designed to melt away tension, improve circulation and leave you feeling relaxed from head to toe.\n\nPerfect for stress relief and overall wellness. Try the sensory journey with the Escape massage, or Lava Shells deep warmth to soothe the muscles, or just a back massage to help release everyday tension.",
     options: [
       { name: "Divine Escape Signature Massage", duration: "85 min", price: "£85" },
       { name: "Escape Massage", duration: "60 min", price: "£70" },

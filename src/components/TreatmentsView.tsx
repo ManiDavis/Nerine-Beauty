@@ -20,6 +20,8 @@ export interface TreatmentData {
   category: string
   tagline: string
   description: string
+  extendedSections?: { heading: string; content: string }[]
+  benefits?: string[]
   options: TreatmentOption[]
   bookingNote?: string
   img?: string
@@ -100,9 +102,32 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-cream-300/30 to-transparent" />
                 </div>
               )}
-              <p className="font-sans text-navy-700/80 leading-relaxed mb-8 max-w-2xl">
-                {treatment.description}
-              </p>
+              <div className="font-sans text-navy-700/80 leading-relaxed mb-6 max-w-2xl space-y-3">
+                {treatment.description.split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+              {treatment.extendedSections?.map((section) => (
+                <div key={section.heading} className="mb-6 max-w-2xl">
+                  <h4 className="font-serif text-navy-800 text-lg mb-2">{section.heading}</h4>
+                  <p className="font-sans text-navy-700/80 leading-relaxed">{section.content}</p>
+                </div>
+              ))}
+              {treatment.benefits && (
+                <div className="mb-8 max-w-2xl">
+                  <h4 className="font-serif text-navy-800 text-lg mb-3">Treatment Benefits</h4>
+                  <ul className="space-y-1.5">
+                    {treatment.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-start gap-2 font-sans text-sm text-navy-700/80">
+                        <svg className="flex-shrink-0 mt-0.5 w-4 h-4 text-gold-600" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="3,8 6,11 13,4" />
+                        </svg>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {treatment.options.map((opt) => (
                   <div
