@@ -128,7 +128,7 @@ export const treatments: Treatment[] = [
     name: "Waxing & Electrolysis",
     category: "hair-removal",
     tagline: "Smooth for longer",
-    img: "/images/Electrolysis.jpeg",
+    img: "/images/wax nerine.png",
     description:
       "Smooth, long-lasting results using the finest wax formulations for minimal discomfort. Electrolysis offers a permanent solution for unwanted hair.",
     bookingNote: "Combinations of different wax options are available — visit the booking site to explore and build your session.",
