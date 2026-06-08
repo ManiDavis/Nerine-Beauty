@@ -11,6 +11,7 @@ export interface Treatment {
   tagline: string;
   description: string;
   options: TreatmentOption[];
+  bookingNote?: string;
   img?: string;
   imgPosition?: string;
 }
@@ -69,7 +70,7 @@ export const treatments: Treatment[] = [
     img: "/images/A - Lift Facial.jpg",
     imgPosition: 'center 20%',
     description:
-      "The non-surgical alternative to a facelift. A-Lift lifts, firms and tones the face and neck, reduces fine lines and restores elasticity — completely pain free, with no downtime.",
+      "Designed to fit into any lifestyle, age group, and suit the busiest of schedules. Whether trying it out, booking a course, or creating a bespoke programme — A-Lift delivers luxury, relaxation, AND results. Intensive lifting, toning and firming of the face and neck, improved skin hydration, smoother more radiant complexion, and reduced fine lines — non-invasive and completely pain free with no downtime. Have just the A-Lift on its own, or indulge in a massage and mask. Book a consultation to discuss the treatment.",
     options: [
       { name: "A-Lift", duration: "45 min", price: "£55" },
       { name: "A-Lift — Course of 5", duration: "1 a week for 5 weeks", price: "£250" },
@@ -85,7 +86,7 @@ export const treatments: Treatment[] = [
     tagline: "Escape the everyday",
     img: "/images/Massage.jpeg",
     description:
-      "Deeply restorative treatments using 100% natural, vegan-friendly Sensory Retreats oils — Coconut, Argan and Shea. From a 30-minute Aroma Massage to the full Divine Escape Signature experience, plus body care packages and Lava Shells.",
+      "Massage is an ancient therapy that still works wonders today, and can transport you into relaxation to help soothe mind and muscles. Using a combination of Swedish massage movements, Balinese, and over 30 years of experience — a gentle flowing massage designed to melt away tension, improve circulation and leave you feeling relaxed from head to toe. Perfect for stress relief and overall wellness. Try the sensory journey with the Escape massage, or Lava Shells deep warmth to soothe the muscles, or just a back massage to help release everyday tension.",
     options: [
       { name: "Divine Escape Signature Massage", duration: "85 min", price: "£85" },
       { name: "Escape Massage", duration: "60 min", price: "£70" },
@@ -110,13 +111,13 @@ export const treatments: Treatment[] = [
     img: "/images/Electrolysis.jpeg",
     description:
       "Smooth, long-lasting results using the finest wax formulations for minimal discomfort. Electrolysis offers a permanent solution for unwanted hair.",
+    bookingNote: "Combinations of different wax options are available — visit the booking site to explore and build your session.",
     options: [
       { name: "Full Leg Wax", duration: "45 min", price: "£38" },
       { name: "Half Leg Wax", duration: "30 min", price: "From £25" },
       { name: "Bikini Wax", duration: "20 min", price: "£14" },
       { name: "Electrolysis (15 min)", duration: "15 min", price: "£17" },
       { name: "Electrolysis (30 min)", duration: "30 min", price: "£28" },
-      { name: "Electrolysis (45 min)", duration: "45 min", price: "£40" },
     ],
   },
   {
@@ -127,11 +128,12 @@ export const treatments: Treatment[] = [
     img: "/images/Eyelash-Lift.jpg",
     description:
       "From expertly shaped brows to stunning lash lifts using Nouveau Lashes and LVL technology — our eye treatments frame your face beautifully for weeks.",
+    bookingNote: "Combinations of tinting and lash options are available — visit the booking site to explore and build your session.",
     options: [
       { name: "LVL Lash Lift", duration: "60 min", price: "£55" },
-      { name: "Nouveau Classic Lashes", duration: "90 min", price: "£75" },
-      { name: "Lash Tint", duration: "20 min", price: "£18" },
-      { name: "Brow Tint & Shape", duration: "30 min", price: "£22" },
+      { name: "Classic Lashes", duration: "90 min", price: "£85" },
+      { name: "Eyelash Tint", duration: "20 min", price: "£20" },
+      { name: "Brow Tint & Shape", duration: "30 min", price: "£19" },
     ],
   },
   {
@@ -142,12 +144,12 @@ export const treatments: Treatment[] = [
     img: "/images/Bio Sculpt Gel Nails.jpeg",
     description:
       "Bio Sculpture gel strengthens, protects and beautifies your natural nails. Available in an extensive colour range with long-lasting, chip-free results.",
+    bookingNote: "Luxury and Express options are available in both Gel and Varnish — visit the booking site to explore.",
     options: [
-      { name: "Gel Overlay — Hands", duration: "60 min", price: "£45" },
-      { name: "Gel Overlay — Feet", duration: "60 min", price: "£45" },
+      { name: "Gel Manicure", duration: "60 min", price: "£45" },
+      { name: "Gel Pedicure", duration: "60 min", price: "£45" },
       { name: "Bio Varnish — Hands", duration: "45 min", price: "£35" },
       { name: "Bio Varnish — Feet", duration: "45 min", price: "£35" },
-      { name: "Gel Infill", duration: "45 min", price: "£35" },
     ],
   },
 ];

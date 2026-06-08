@@ -21,6 +21,7 @@ export interface TreatmentData {
   tagline: string
   description: string
   options: TreatmentOption[]
+  bookingNote?: string
   img?: string
   imgPosition?: string
 }
@@ -119,6 +120,16 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
                     </div>
                   </div>
                 ))}
+                {treatment.bookingNote && (
+                  <div className="rounded-xl bg-gold-500/10 border border-gold-500/30 px-5 py-4 flex items-start gap-3 sm:col-span-2 lg:col-span-1">
+                    <svg className="flex-shrink-0 mt-0.5 w-4 h-4 text-gold-600" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                      <circle cx="8" cy="8" r="6" />
+                      <line x1="8" y1="7" x2="8" y2="11" />
+                      <circle cx="8" cy="5" r="0.5" fill="currentColor" />
+                    </svg>
+                    <p className="font-sans text-xs text-navy-700 leading-relaxed">{treatment.bookingNote}</p>
+                  </div>
+                )}
               </div>
               <div className="mt-6">
                 <Link

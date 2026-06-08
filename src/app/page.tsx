@@ -196,6 +196,19 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ── PHILOSOPHY QUOTE ─────────────────────────────────── */}
+      <section className="bg-navy-900 py-20 px-6">
+        <FadeIn className="mx-auto max-w-3xl text-center">
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold-500 block mb-6">Our Philosophy</span>
+          <blockquote className="font-serif text-2xl sm:text-3xl text-cream-200 leading-relaxed mb-6">
+            &ldquo;In this ever changing and busy world, life can get on top of us and &lsquo;me time&rsquo; is no longer a luxury but a necessity.&rdquo;
+          </blockquote>
+          <p className="font-sans text-cream-400 leading-relaxed max-w-2xl mx-auto">
+            Our needs are changing, and we are increasingly seeking ways to renew both physical and emotional self. I would like to invite you to relax at Nerine Beauty with treatments and products that I have picked for their research and care values for our body and mind.
+          </p>
+        </FadeIn>
+      </section>
+
       {/* ── FEATURED TREATMENTS ──────────────────────────────── */}
       <section className="bg-navy-800 py-24 px-6 relative overflow-hidden">
         <FlowerBackground color="#C4A05A" opacity={0.05} flip />
