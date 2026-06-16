@@ -1,9 +1,32 @@
 import type { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { VisualEditing } from 'next-sanity'
+import { Great_Vibes, Playfair_Display, Raleway } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-script',
+  display: 'swap',
+})
+
+const playfairDisplay = Playfair_Display({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+})
+
+const raleway = Raleway({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +46,7 @@ export default async function RootLayout({
   const { isEnabled } = draftMode()
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${greatVibes.variable} ${playfairDisplay.variable} ${raleway.variable}`}>
       <body className="antialiased">
         <Header />
         {children}
