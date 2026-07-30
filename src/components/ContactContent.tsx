@@ -34,6 +34,8 @@ export function ContactContent({
   openingHours = defaultHours,
 }: ContactContentProps) {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -42,9 +44,30 @@ export function ContactContent({
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(false)
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `New enquiry from ${form.name} — Nerine Beauty website`,
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone || 'Not provided',
+          'Treatment of interest': form.service || 'Not specified',
+          Message: form.message || 'No message provided',
+        }),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const addressLines = address.split('\n')
@@ -197,14 +220,20 @@ export function ContactContent({
                     placeholder="Tell us what you're looking for, preferred dates, or any questions…"
                   />
                 </div>
+                {error && (
+                  <p className="font-sans text-sm text-red-400">
+                    Something went wrong sending your message. Please call or email us directly instead.
+                  </p>
+                )}
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <motion.button
                     type="submit"
+                    disabled={submitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
-                    className="flex-1 rounded-full bg-gold-500 py-4 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-colors hover:bg-gold-400"
+                    className="flex-1 rounded-full bg-gold-500 py-4 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-colors hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {submitting ? 'Sending…' : 'Send Message'}
                   </motion.button>
                   <Link
                     href={`tel:${phone.replace(/\s/g, '')}`}
