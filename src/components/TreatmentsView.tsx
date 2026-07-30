@@ -2,10 +2,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 import { categories } from '@/data/treatments'
 import { FadeIn } from '@/components/FadeIn'
 import { FlowerBackground } from '@/components/FlowerBackground'
+import { BOOKING_URL } from '@/lib/constants'
 
 interface TreatmentOption {
   name: string
@@ -157,8 +157,10 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
                 )}
               </div>
               <div className="mt-6">
-                <Link
-                  href="/contact"
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-navy-800 px-6 py-2.5 font-sans text-xs font-medium tracking-wider text-cream-200 transition-all hover:bg-navy-700 hover:shadow-md active:scale-95"
                 >
                   Book This Treatment
@@ -173,7 +175,7 @@ function TreatmentCard({ treatment }: { treatment: TreatmentData }) {
                   >
                     <polyline points="3,2 9,6 3,10" />
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -247,12 +249,14 @@ export function TreatmentsView({ treatments }: { treatments: TreatmentData[] }) 
           <p className="font-sans text-cream-300/80 text-sm leading-relaxed mb-8">
             Contact us directly to check availability and reserve your appointment. We recommend booking in advance.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block rounded-full bg-gold-500 px-10 py-4 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-all hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/20 active:scale-95"
           >
             Book Your Appointment
-          </Link>
+          </a>
         </FadeIn>
       </div>
     </>
