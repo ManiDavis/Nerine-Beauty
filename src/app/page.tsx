@@ -4,6 +4,7 @@ import { HomeHero } from '@/components/HomeHero'
 import { FadeIn, FadeInStagger, FadeInItem } from '@/components/FadeIn'
 import { FlowerBackground } from '@/components/FlowerBackground'
 import { FEATURED_TREATMENTS_QUERY, TESTIMONIALS_QUERY, SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
+import { BOOKING_URL } from '@/lib/constants'
 
 // ── Static fallbacks (used until Sanity content is added) ─────────────
 const staticFeatured = [
@@ -349,9 +350,9 @@ export default async function HomePage() {
             Book your appointment today and experience the Nerine difference — limited appointments available each week.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="rounded-full bg-gold-500 px-10 py-4 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-all hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/20 active:scale-95">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gold-500 px-10 py-4 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-all hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/20 active:scale-95">
               Book Your Appointment
-            </Link>
+            </a>
             <Link href="/treatments" className="rounded-full border border-gold-500/40 px-10 py-4 font-sans text-sm font-medium tracking-wider text-cream-200 transition-all hover:border-gold-400 hover:text-gold-400">
               View Treatments
             </Link>

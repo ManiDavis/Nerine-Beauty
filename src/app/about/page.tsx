@@ -5,6 +5,7 @@ import { PageHero } from '@/components/PageHero'
 import { FadeIn, FadeInStagger, FadeInItem } from '@/components/FadeIn'
 import { FlowerBackground } from '@/components/FlowerBackground'
 import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
+import { BOOKING_URL } from '@/lib/constants'
 
 export const metadata: Metadata = { title: 'About' }
 
@@ -86,12 +87,14 @@ export default async function AboutPage() {
               <p className="font-sans text-navy-700/80 leading-relaxed mb-8">{aboutBody2}</p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <Link
-                href="/contact"
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-navy-800 px-8 py-3.5 font-sans text-sm font-medium tracking-wider text-cream-200 transition-all hover:bg-navy-700 hover:shadow-lg active:scale-95 w-fit"
               >
                 Book an Appointment
-              </Link>
+              </a>
             </FadeIn>
           </div>
 

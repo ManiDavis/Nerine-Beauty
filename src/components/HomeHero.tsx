@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { BOOKING_URL } from '@/lib/constants'
 
 const brands = ['Guinot', 'Bio Sculpture', 'Nouveau Lashes', 'LVL', 'Sensory Retreats']
 
@@ -49,12 +50,14 @@ export function HomeHero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
-            href="/contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-gold-500 px-8 py-3.5 font-sans text-sm font-semibold tracking-wider text-navy-900 transition-all hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/20 active:scale-95"
           >
             Book Now
-          </Link>
+          </a>
           <Link
             href="/treatments"
             className="rounded-full border border-gold-500/50 px-8 py-3.5 font-sans text-sm font-medium tracking-wider text-cream-200 transition-all hover:border-gold-400 hover:text-gold-400 active:scale-95"
